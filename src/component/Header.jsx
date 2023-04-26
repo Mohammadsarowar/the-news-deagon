@@ -2,6 +2,7 @@ import { Button, Container, Nav, Navbar } from "react-bootstrap";
 import logo from "../assets/logo.png";
 import moment from "moment";
 import Marquee from "react-fast-marquee";
+import { Link } from "react-router-dom";
 const Header = () => {
   return (
     <div className="container">
@@ -25,7 +26,9 @@ const Header = () => {
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="mx-auto ">
-            <Nav.Link to="/category/0">Home</Nav.Link>
+            <Nav.Link to="/category/0">
+               <Link to="/">Home</Link>
+            </Nav.Link>
             <Nav.Link href="#pricing">About</Nav.Link>
             <Nav.Link href="pricing">Pricing</Nav.Link>
              
