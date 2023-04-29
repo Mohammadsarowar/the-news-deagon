@@ -1,17 +1,25 @@
-import { Button, Container, Nav, Navbar } from "react-bootstrap";
-import logo from "../assets/logo.png";
 import moment from "moment";
-import Marquee from "react-fast-marquee";
-import { Link } from "react-router-dom";
-import { FaUserCircle } from "react-icons/fa";
 import { useContext } from "react";
-import { AuthContext } from "../Provider/AuthProvider";
-const Header = () => {
-  const { user,LogOut} = useContext(AuthContext);
-  return (
-    <div className="container">
-      <div className="text-center mt-4">
-        <img src={logo} />
+import { Button, Container, Nav, Navbar } from "react-bootstrap";
+import { Link } from "react-router-dom";
+import { AuthContext } from "../../Provider/AuthProvider";
+import { FaUserCircle } from "react-icons/fa";
+import Marquee from "react-fast-marquee";
+
+
+const NavigationBar = () => {
+const {user,LogOut} = useContext(AuthContext)
+  const handleLogin =() =>{
+     LogOut()
+     .then()
+     .catch(error=>{
+      console.log(error);
+     })
+  }
+    return (
+        <Container>
+             {/* <div className="text-center mt-4">
+        <img src="" />
         <p className="text-secondary">
           <small>Journalism Without Fear or Favour</small>
           <small>{}</small>
@@ -28,14 +36,14 @@ const Header = () => {
           I can be a React component, multiple React components, or just some
           text.
         </Marquee>
-      </div>
+      </div> */}
 <Navbar collapseOnSelect expand="lg" bg="light" variant="light">
         <Container>
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav">
             <Nav className="mx-auto ">
-              <Nav.Link>
-                <Link to="/category/0">Home</Link>
+              <Nav.Link to="/category/0">
+                <Link to="/">Home</Link>
               </Nav.Link>
               <Nav.Link href="#pricing">About</Nav.Link>
               <Nav.Link href="pricing">Pricing</Nav.Link>
@@ -47,7 +55,7 @@ const Header = () => {
                 </Nav.Link>
               )}
               {user ? (
-                <Button variant="dark" onClick={LogOut}>LogOut</Button>
+                <Button variant="dark" onClick={handleLogin}>LogOut</Button>
               ) : (
                 <Link to="/login">
                   <Button>Login</Button>
@@ -57,8 +65,9 @@ const Header = () => {
           </Navbar.Collapse>
         </Container>
       </Navbar>
-    </div>
-  );
+
+        </Container>
+    );
 };
 
-export default Header;
+export default NavigationBar;

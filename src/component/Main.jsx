@@ -6,10 +6,12 @@ import LeftNav from "./Sheard/LeftNav";
 import { Outlet } from "react-router-dom";
 
 
+
 const Main = () => {
   return (
     <div>
       <Header></Header>
+      
       <Container>
         <Row>
           <Col lg={3}>
@@ -17,7 +19,7 @@ const Main = () => {
           </Col>
           <Col lg={6}>
           <Outlet/>
-             
+            
             <h2>Main Component coming</h2>
           </Col>
           <Col lg={3}>

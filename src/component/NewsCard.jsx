@@ -7,10 +7,11 @@ import {
   FaStar,
 } from "react-icons/fa";
 import {  Card, Image } from "react-bootstrap";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Rating from "react-rating";
 
 const NewsCard = ({ news }) => {
+  
   const {
     _id,
     title,

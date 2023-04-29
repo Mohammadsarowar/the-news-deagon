@@ -2,7 +2,7 @@
 import Header from '../Header';
 import { Col, Container, Row } from 'react-bootstrap';
 
-import { Outlet } from 'react-router-dom';
+import { Outlet, useLoaderData } from 'react-router-dom';
 import RightNav from '../Sheard/RightNav';
 import Footer from '../Footer';
 import News from '../pages/News';
@@ -16,7 +16,7 @@ const newsLayout = () => {
         <Row>
           <Col lg={9}>
           <Outlet/>
-            <News/>
+           <News/>
           </Col>
           <Col lg={3}>
             <div className="">
